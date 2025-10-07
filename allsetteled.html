@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promise.allSettled Example</title>
+</head>
+
+<body>
+  <h2>Promise.allSettled() Example</h2>
+  <div id="result">Running promises...</div>
+
+  <script>
+    let promise1 = new Promise((resolve) => {
+      setTimeout(() => { resolve("Hello"); }, 5000);
+    });
+
+    let promise2 = new Promise((_, reject) => {
+      setTimeout(() => { reject("FSD"); }, 10000);
+    });
+
+    let promise3 = new Promise((resolve) => {
+      setTimeout(() => { resolve("Fullstack"); }, 15000);
+    });
+
+    Promise.allSettled([promise1, promise2, promise3])
+      .then((results) => {
+        console.log(results);
+        let output = results.map((res, i) => 
+          `<p>Promise ${i + 1}: ${res.status} — ${res.status === "fulfilled" ? res.value : res.reason}</p>`
+        ).join("");
+        document.getElementById("result").innerHTML = output;
+      })
+      .catch((err) => {
+        document.getElementById("result").innerHTML = `<span style="color:red;">${err}</span>`;
+      });
+  </script>
+</body>
+</html>
