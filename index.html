@@ -1,13 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>react.json</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <style>
+        #header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        #navbar {
+            background-color: #222;
+            overflow: hidden;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        #navbar a:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>My Website</h1>
+        <h3>Simple Multi-Page Layout</h3>
+    </div>
+
+    <div id="navbar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <h2 style="padding:20px;">Welcome! Click the links above to visit pages.</h2>
+
+</body>
 </html>
